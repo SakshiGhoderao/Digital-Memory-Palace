@@ -1,0 +1,177 @@
+body{
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: url("day.jpeg");
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+}
+
+html, body{
+  height: 100%;
+  overflow: hidden;
+}
+
+.palace{
+    width: 520px;
+    background: transparent;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 20px 40px rgb(0, 0, 0, .2);
+    text-align: center;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    height: 450px;
+    perspective: 1000px;
+    
+}
+
+.page{
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+}
+
+.flip{
+  transform: rotateY(180deg);
+}
+
+.rooms{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.room{
+    background: #eef2ff;
+    border-radius: 12px;
+    padding: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.room:hover{
+    transform: scale(1.05);
+}
+
+.memories{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.memory{
+    background: #f1f5f9;
+    border-radius: 10px;
+    padding: 12px;
+    text-align: left;
+}
+
+#addRoomBtn{
+  color: black;
+  border: 8px;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+#roomView button{
+    margin-top: 10px;
+    width: 100%;
+}
+#roomView button:last-child {
+  position: sticky;
+  bottom: 0;
+  background: #4f46e5;
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+}
+#roomView {
+  display: flex;
+  flex-direction: column;
+}
+
+.memoryForm input,
+.memoryForm textarea,
+.memoryForm select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.memory img {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 6px;
+}
+
+#modeBtn{
+  padding: 10px;
+  background: white;
+  color: black;
+  border-radius: 8px;
+}
+#modeBtn:hover{
+  background:#eef2ff;
+}
+.dark{
+  background:url("background.jpeg");
+  background-size: cover;
+  color:rgb(247, 10, 10);
+  animation: initial 0.5s ease;
+}
+
+.dark.palace{
+  background: #5a679e;
+  color: rgb(250, 241, 241);
+}
+.dark.memory{
+  color: black;
+}
+
+.room, .memory, .palace {
+  transition: all 0.3s ease;
+}
+
+.dashboard {
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+#mainView, #roomView {
+  animation: fadeSlide .4s ease;
+}
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.palace::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgb(255, 255, 255,0.25), transparent 60%);
+  animation: glowMove 8s infinite alternate ease-in-out;
+  pointer-events: none;
+  
+}
+
+
+@keyframes glowMove{
+  0%{background-position: 0% 0%;}
+  100%{background-position: 100% 100%;}
+}
+
+
+
+

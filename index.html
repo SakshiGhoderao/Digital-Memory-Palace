@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Digital Memory Palace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="modeBtn">🌙 Dark Mode</button>
+    <div class="palace">
+        <div class="page" id="page">
+        <h1 id="title"> 🏛️ My Digital Memory Palace</h1>
+
+        <div id="mainView">
+            <div class="rooms" id="rooms"></div>
+            <button id="addRoomBtn">➕ Add New Room</button>
+        </div>  
+
+        <div id="roomView" style="display:none">
+            <h2 id="roomTitle"></h2>
+            <div class="dashboard" id="dashboard"></div>
+            <div class="memories" id="memories"></div>
+            
+            <select id="filterEmotion">
+                <option value="all">All</option>
+                <option value="happy">😊 Happy</option>
+                <option value="sad">💙 Sad</option>
+                <option value="excited">🔥  Excited</option>
+                <option value="calm">🌿 Calm</option>
+                <option value="proud">🏆 Proud</option>
+            </select>
+            
+
+            <div class="memoryForm">
+                <input id="memTitle" placeholder="Memory title">
+                <textarea id="memText" placeholder="Write your memory"></textarea>
+
+                <select id="memEmotion">
+                <option value="happy">😊 Happy</option>
+                <option value="sad">💙 Sad</option>
+                <option value="excited">🔥  Excited</option>
+                <option value="calm">🌿 Calm</option>
+                <option value="proud">🏆 Proud</option>
+                </select>
+
+                <input type="file" id="memImage">
+                <button id="saveMemoryBtn"> 💾Save Memory</button><br>
+
+                <select id="roomTheme">
+                    <option value="#eef2ff">Blue</option>
+                    <option value="#dcfce7">Green</option>
+                    <option value="#fee2e2">Red</option>
+                    <option value="#fef9c3">Yellow</option>
+                    <option value="#f3e8ff">Purple</option>
+                </select>
+            </div>
+            <button onclick="goBack()">⬅ Back</button>
+        </div>
+        <br>
+        </div>
+    </div>
+    
+
+
+    <script src="script.js"></script>
+</body>
+</html>
